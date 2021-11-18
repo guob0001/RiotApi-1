@@ -10,4 +10,22 @@ public class Summoner {
     @Id
     private String id;
 
+    @Column
+    private String accountId;
+
+    @Column
+    private String name;
+
+    @Column
+    private int profileIconId;
+
+    @Column
+    private String puuId;
+
+    @Column
+    private long revisionDate;
+
+    @Column
+    private long summonerLevel;
+
 }
