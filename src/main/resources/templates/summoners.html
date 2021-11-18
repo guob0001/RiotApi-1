@@ -9,7 +9,16 @@
 </head>
 <body>
 
-    <div id="summoners-riot"></div>
+    <input id="summoner-search">
+    <button onclick="fetchSummonerFromInput()">Search</button>
+    <button onclick="saveSummonerToDb()">Save</button>
+
+    <h1 id="summoner-name"></h1>
+    <h2 id="summoner-level"></h2>
+    <h2 id="summoner-accountId"></h2>
+    <h2 id="summoner-revisionDate"></h2>
+    <h2 id="summoner-profileIconId"></h2>
+    <h2 id="summoner-puuId"></h2>
 
 <script src="../summoners/summoners.js"></script>
 
