@@ -19,13 +19,13 @@ public class Summoner {
     @Column
     private int profileIconId;
 
-    @Column
-    private String puuId;
+    @Id
+    private String puuId = "xxx";
 
     @Column
-    private long revisionDate;
+    private Long revisionDate;
 
     @Column
-    private long summonerLevel;
+    private Long summonerLevel;
 
 }
