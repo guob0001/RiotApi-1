@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name="summoners")
 @Entity
 public class Summoner {
-    @Id
+    @Column
     private String id;
 
     @Column
