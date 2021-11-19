@@ -7,6 +7,9 @@ import javax.persistence.*;
 @Table(name="summoners")
 @Entity
 public class Summoner {
+    @Id
+    private String puuid = "";
+
     @Column
     private String id;
 
