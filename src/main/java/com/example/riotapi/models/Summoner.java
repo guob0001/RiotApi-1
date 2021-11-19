@@ -19,9 +19,6 @@ public class Summoner {
     @Column
     private int profileIconId;
 
-    @Id
-    private String puuId = "xxx";
-
     @Column
     private Long revisionDate;
 

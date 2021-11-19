@@ -3,7 +3,7 @@ let searchSummoner = "Gubz";
 
 function fetchSummonerFromInput(){
     searchSummoner = document.getElementById("summoner-search").value;
-    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=", )
+    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=RGAPI-f02dbaa0-0794-42ea-85fe-f07f5ccf83c0", )
         .then(response => response.json())
         .then(summoner => {
             console.log(summoner)
@@ -22,7 +22,7 @@ function fetchSummonerFromInput(){
                 accountId: accountId,
                 revisionDate: revisionDate,
                 profileIconId: profileIconId,
-                puuId: puuId
+                puuid: puuid
             };
         });
 }
