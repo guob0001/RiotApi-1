@@ -1,6 +1,5 @@
 package com.example.riotapi.controllers;
 
-import com.example.riotapi.models.Champion;
 import com.example.riotapi.models.Match;
 import com.example.riotapi.repositories.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +23,14 @@ public class Matches {
 
     @PostMapping("/matches")
     public Match addMatches(@RequestBody Match newMatch){
-        newMatch.setId(null);
+        newMatch.setMatches_id(null);
         return matches.save(newMatch);
     }
 
     @PutMapping("/matches/{id}")
     public String updateMatchById(@PathVariable Long id, @RequestBody Match matchToUpdateWith){
         if (matches.existsById(id)) {
-            matchToUpdateWith.setId(id);
+            matchToUpdateWith.setMatches_id(id);
             matches.save(matchToUpdateWith);
             return "Match was created";
         } else {
