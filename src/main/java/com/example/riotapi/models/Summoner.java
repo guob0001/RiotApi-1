@@ -3,7 +3,6 @@ package com.example.riotapi.models;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Table(name="summoners")
