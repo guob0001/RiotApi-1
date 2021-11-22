@@ -43,8 +43,6 @@ public class Champions {
         return champions.findById(id).map(foundChampion -> {
             if (championToUpdateWith.getName() != null) foundChampion.setName(championToUpdateWith.getName());
             if (championToUpdateWith.getPrice() != 0) foundChampion.setPrice(championToUpdateWith.getPrice());
-            if (championToUpdateWith.getCurrentLevel() != 0) foundChampion.setCurrentLevel(championToUpdateWith.getCurrentLevel());
-            if (championToUpdateWith.getCurrentItems() != null) foundChampion.setCurrentItems(championToUpdateWith.getCurrentItems());
             if (championToUpdateWith.getPickRate() != 0) foundChampion.setPickRate(championToUpdateWith.getPickRate());
             if (championToUpdateWith.getBanRate() != 0) foundChampion.setBanRate(championToUpdateWith.getBanRate());
 

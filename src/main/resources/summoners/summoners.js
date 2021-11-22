@@ -3,7 +3,7 @@ let searchSummoner = "Gubz";
 
 function fetchSummonerFromInput(){
     searchSummoner = document.getElementById("summoner-search").value;
-    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=", )
+    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=RGAPI-746e1a13-be6a-409e-a930-01a8c6fa9e07")
         .then(response => response.json())
         .then(summoner => {
             console.log(summoner)
@@ -28,6 +28,7 @@ function fetchSummonerFromInput(){
 }
 
 function saveSummonerToDb(saveSummoner){
+    console.log(saveSummoner)
     fetch(baseURL + "/summoners", {
         method: "POST",
         headers: {"Content-type": "application/json; charset=UTF-8"},

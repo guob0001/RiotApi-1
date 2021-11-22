@@ -21,12 +21,6 @@ public class Champion {
     private int price;
 
     @Column
-    private int currentLevel;
-
-    @Column
-    private String currentItems;
-
-    @Column
     private double pickRate;
 
     @Column

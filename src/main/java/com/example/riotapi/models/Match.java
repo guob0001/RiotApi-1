@@ -33,7 +33,7 @@ public class Match {
     @JoinColumn(name = "summoner_id")
     private Summoner summoners;
 
-    /*@OneToMany(mappedBy = "matches", fetch = FetchType.LAZY)
+    /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "champion_id")
-    private List<Champion> champions;*/
+    private Champion champions;*/
 }
