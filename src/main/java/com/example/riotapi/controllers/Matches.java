@@ -17,7 +17,7 @@ public class Matches {
     }
 
     @GetMapping("/matches/{id}")
-    public Match getMatchesById(@PathVariable Long id){
+    public Match getMatchesById(@PathVariable String id){
         return matches.findById(id).get();
     }
 
@@ -27,8 +27,8 @@ public class Matches {
         return matches.save(newMatch);
     }
 
-    @PutMapping("/matches/{id}")
-    public String updateMatchById(@PathVariable Long id, @RequestBody Match matchToUpdateWith){
+    /*@PutMapping("/matches/{id}")
+    public String updateMatchById(@PathVariable String id, @RequestBody Match matchToUpdateWith){
         if (matches.existsById(id)) {
             matchToUpdateWith.setMatches_id(id);
             matches.save(matchToUpdateWith);
@@ -36,10 +36,10 @@ public class Matches {
         } else {
             return "Match not found";
         }
-    }
+    }*/
 
     @PatchMapping("/matches/{id}")
-    public String patchMatchesById(@PathVariable Long id, @RequestBody Match matchToUpdateWith) {
+    public String patchMatchesById(@PathVariable String id, @RequestBody Match matchToUpdateWith) {
         return matches.findById(id).map(foundMatch -> {
             if (matchToUpdateWith.getGameType() != null) foundMatch.setGameType(matchToUpdateWith.getGameType());
             if (matchToUpdateWith.getDuration() != 0) foundMatch.setDuration(matchToUpdateWith.getDuration());
@@ -55,7 +55,7 @@ public class Matches {
 
 
     @DeleteMapping("/matches/{id}")
-    public void deleteMatchById(@PathVariable Long id){
+    public void deleteMatchById(@PathVariable String id){
         matches.deleteById(id);
     }
 }

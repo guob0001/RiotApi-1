@@ -29,11 +29,13 @@ public class Match {
     @Column 
     private String endDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "summoner_id")
+    @ManyToOne
+    @JoinColumn(name = "puuid")
+    @Nullable
     private Summoner summoners;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "champion_id")
-    private Champion champions;*/
+    private Champion champions;
+
 }

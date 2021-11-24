@@ -3,6 +3,8 @@ package com.example.riotapi.models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Table(name="summoners")
@@ -29,4 +31,7 @@ public class Summoner {
     @Column
     private Long summonerLevel;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "summoners", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Match> matches;
 }

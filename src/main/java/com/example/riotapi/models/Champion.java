@@ -1,9 +1,11 @@
 package com.example.riotapi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Table(name="champions")
@@ -25,5 +27,9 @@ public class Champion {
 
     @Column
     private double banRate;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "champions", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Match> matches;
 
 }
