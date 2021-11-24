@@ -27,19 +27,19 @@ function constructMatchesTableRow(matchesTableRow, matches){
                 <p class="row-end-date">${(escapeHTML(matches.endDate))}</p>
             </td>
             <td>
-                <p class="row-game-type">${escapeHTML(matches.gameType)}</p>
+                <p class="row-game-type">${(escapeHTML(matches.gameType))}</p>
             </td>
             <td>
-                <p class="row-start-date">${escapeHTML(matches.start_date)}</p>
+                <p class="row-start-date">${(escapeHTML(matches.startDate))}</p>
             </td>
             <td>
                 <p class="row-start-date">${(escapeHTML(matches.behavior))}</p>
             </td>
             <td>
-                <p class="row-summoner-id">${escapeHTML(matches.summoner_id)}</p>
+                <p class="row-summoner-id">${(matches.summoners.id)}</p>
             </td>
             <td>
-                <p class="row-champion-id">${escapeHTML(matches.champion_id)}</p>
+                <p class="row-champion-id">${(matches.champions.id)}</p>
             </td>
             <td>
                 <button onclick="updateMatch(${matches.id})">🔄</button>

@@ -1,6 +1,4 @@
-const summonerRiotDiv = document.getElementById("summoners-riot");
-let searchSummoner = "Gubz";
-
+let searchSummoner = "doublelift";
 function fetchSummonerFromInput(){
     searchSummoner = document.getElementById("summoner-search").value;
     fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=RGAPI-0edcee9d-c94f-4d67-80bc-a92d4d7cb25d")
@@ -13,7 +11,8 @@ function fetchSummonerFromInput(){
             const accountId = document.getElementById("summoner-accountId").innerText = summoner.accountId;
             const revisionDate = document.getElementById("summoner-revisionDate").innerText = summoner.revisionDate;
             const profileIconId = document.getElementById("summoner-profileIconId").innerText = summoner.profileIconId;
-            const puuId = document.getElementById("summoner-puuId").innerText = summoner.puuId;
+            const puuid = document.getElementById("summoner-puuid").innerText = summoner.puuid;
+
 
             saveSummoner = {
                 name: name,
@@ -34,5 +33,6 @@ function saveSummonerToDb(saveSummoner){
         headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(saveSummoner)
     }).then(response => response.json())
-        .then(result => console.log(result))
+        .then(result =>
+            console.log(result))
 }
