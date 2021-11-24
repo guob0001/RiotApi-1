@@ -3,7 +3,7 @@ let searchSummoner = "Gubz";
 
 function fetchSummonerFromInput(){
     searchSummoner = document.getElementById("summoner-search").value;
-    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=RGAPI-70f5bb34-9c3e-448b-9382-7c7319a13a39")
+    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=RGAPI-0edcee9d-c94f-4d67-80bc-a92d4d7cb25d")
         .then(response => response.json())
         .then(summoner => {
             console.log(summoner)

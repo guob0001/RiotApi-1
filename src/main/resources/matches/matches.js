@@ -8,7 +8,7 @@ fetch(baseURL + "/matches")
 
 function createMatchesCard(matches){
     const  matchesTableRow = document.createElement("tr");
-    matchesTableRow.matches_id = matches.matches_id;
+    matchesTableRow.id = matches.id;
 
     matchesRiotTableBody.appendChild(matchesTableRow);
 
@@ -18,15 +18,13 @@ function createMatchesCard(matches){
 function constructMatchesTableRow(matchesTableRow, matches){
     matchesTableRow.innerHTML = `
             <td>
-                <p class="row-matches-duration">${escapeHTML(matches.duration)}</p>
-                
+                <p class="row-matches-matches-id">${(matches.id)}</p>
             </td>
             <td>
-                <p class="row-matches-matches-id">${escapeHTML(matches.matches_id)}</p>
-                
+                <p class="row-matches-duration">${(escapeHTML(matches.duration.toString()))}</p>
             </td>
             <td>
-                <p class="row-end-date">${escapeHTML(matches.endDate)}</p>
+                <p class="row-end-date">${(escapeHTML(matches.endDate))}</p>
             </td>
             <td>
                 <p class="row-game-type">${escapeHTML(matches.gameType)}</p>
@@ -35,11 +33,30 @@ function constructMatchesTableRow(matchesTableRow, matches){
                 <p class="row-start-date">${escapeHTML(matches.start_date)}</p>
             </td>
             <td>
+                <p class="row-start-date">${(escapeHTML(matches.behavior))}</p>
+            </td>
+            <td>
                 <p class="row-summoner-id">${escapeHTML(matches.summoner_id)}</p>
             </td>
             <td>
                 <p class="row-champion-id">${escapeHTML(matches.champion_id)}</p>
             </td>
+            <td>
+                <button onclick="updateMatch(${matches.id})">🔄</button>
+                <button onclick="deleteMatch(${matches.id})">❌</button>
+            </td>
         `;
 
+}
+
+function deleteMatch(matchId) {
+    fetch(baseURL + "/matches/" + matchId, {
+        method: "DELETE"
+    }).then(response => {
+        if (response.status === 200) {
+            document.getElementById(matchId).remove();
+        } else {
+            console.log(response.status);
+        }
+    });
 }
