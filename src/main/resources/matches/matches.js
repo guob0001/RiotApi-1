@@ -21,19 +21,19 @@ function constructMatchesTableRow(matchesTableRow, matches){
                 <p class="row-matches-matches-id">${(matches.id)}</p>
             </td>
             <td>
-                <p class="row-matches-duration">${(escapeHTML(matches.duration.toString()))}</p>
+                <p class="row-matches-duration">${(matches.duration.toString())}</p>
             </td>
             <td>
-                <p class="row-end-date">${(escapeHTML(matches.endDate))}</p>
+                <p class="row-end-date">${(matches.endDate)}</p>
             </td>
             <td>
-                <p class="row-game-type">${(escapeHTML(matches.gameType))}</p>
+                <p class="row-game-type">${(matches.gameType)}</p>
             </td>
             <td>
-                <p class="row-start-date">${(escapeHTML(matches.startDate))}</p>
+                <p class="row-start-date">${(matches.startDate)}</p>
             </td>
             <td>
-                <p class="row-start-date">${(escapeHTML(matches.behavior))}</p>
+                <p class="row-start-date">${(matches.behavior)}</p>
             </td>
             <td>
                 <p class="row-summoner-id">${(matches.summoners.id)}</p>
@@ -42,11 +42,12 @@ function constructMatchesTableRow(matchesTableRow, matches){
                 <p class="row-champion-id">${(matches.champions.id)}</p>
             </td>
             <td>
-                <button onclick="updateMatch(${matches.id})">🔄</button>
+                <button id="update-button-${matches.id}">🔄</button>
                 <button onclick="deleteMatch(${matches.id})">❌</button>
             </td>
         `;
-
+        document.getElementById(`update-button-${matches.id}`)
+            .addEventListener("click", () => updateMatch(matches));
 }
 
 function deleteMatch(matchId) {

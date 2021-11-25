@@ -1,28 +1,34 @@
 function updateMatch(match){
-    const tableRowToUpdate = document.getElementById(match)
+    const tableRowToUpdate = document.getElementById(match.id)
 
     tableRowToUpdate.innerHTML = `
         <td>
-            <input id="update-match-behavior-${match.id}" value="${escapeHTML(match.behavior)}">
+            <input id="update-match-behavior-${match.id}" value="${match.behavior}">
         </td>
         <td>
-            <input id="update-match-duration-${match.id}" type="number" value="${escapeHTML(match.duration.toString())}">
+            <input id="update-match-duration-${match.id}" type="number" value="${match.duration}">
         </td>
        <td>
-            <input id="update-match-end-date-${match.id}" value="${escapeHTML(match.endDate)}">
+            <input id="update-match-end-date-${match.id}" value="${match.endDate}">
        </td>
        <td>
-            <input id="update-match-game-type-${match.id}" value="${escapeHTML(match.gameType)}">
+            <input id="update-match-game-type-${match.id}" value="${match.gameType}">
        </td>
        <td>
-            <input id="update-match-start-date-${match.id}" value="${escapeHTML(match.startDate)}">
+            <input id="update-match-start-date-${match.id}" value="${match.startDate}">
        </td>
+       <td>
+            <input id="update-match-summoner-${match.id}" type="text" value="${match.summoners.puuid}">
+       </td>
+        <td>
+            <input id="update-match-champion-${match.id}" type="text" value="${match.champions.name}">
+       </td> 
        <td>
             <button id="cancel-update-${match.id}">✖</button>
             <button onclick="updateMatchInBackend(${match.id})">✅</button>
        </td>
        <td>
-            <button onclick="deleteMatch(${matches.id})">❌</button>
+            <button onclick="deleteMatch(${match.id})">❌</button>
        </td>
     `;
 
@@ -43,10 +49,12 @@ function updateMatchInBackend(matchId) {
     const matchToUpdate = {
         id: matchId,
         behavior: document.getElementById(`update-match-behavior-${matchId}`).value,
-        duration: document.getElementById(`update-gallery-duration-${matchId}`).value,
-        endDate: document.getElementById(`update-gallery-end-date-${matchId}`).value,
-        gameType: document.getElementById(`update-gallery-game-type-${matchId}`).value,
-        startDate: document.getElementById(`update-gallery-start-date-${matchId}`).value
+        duration: document.getElementById(`update-match-duration-${matchId}`).value,
+        endDate: document.getElementById(`update-match-end-date-${matchId}`).value,
+        gameType: document.getElementById(`update-match-game-type-${matchId}`).value,
+        startDate: document.getElementById(`update-match-start-date-${matchId}`).value,
+        summoners: document.getElementById(`update-match-summoner-${matchId}`).value,
+        champions: document.getElementById(`update-match-champion-${matchId}`).value
     };
 
     fetch(baseURL + "/matches/" + matchId, {
