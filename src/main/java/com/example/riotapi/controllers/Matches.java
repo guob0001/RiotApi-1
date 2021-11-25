@@ -1,9 +1,7 @@
 package com.example.riotapi.controllers;
 
 import com.example.riotapi.DTO.MatchEditDTO;
-import com.example.riotapi.DTO.MatchesDTO;
 import com.example.riotapi.models.Match;
-import com.example.riotapi.models.Summoner;
 import com.example.riotapi.repositories.ChampionRepository;
 import com.example.riotapi.repositories.MatchRepository;
 import com.example.riotapi.repositories.SummonerRepository;
@@ -32,11 +30,14 @@ public class Matches {
         return matches.findById(id).get();
     }
 
-    @PostMapping("/matches")
-    public Match addMatches(@RequestBody Match newMatch){
-        newMatch.setId(null);
-        return matches.save(newMatch);
-    }
+    /*@PostMapping("/matches")
+    public MatchEditDTO addMatch(@PathVariable Long id, @RequestBody Match newMatch){
+        return matches.findById(id).map(match -> {
+            newMatch.setId(null);
+            newMatch.setM
+        }
+        )
+    }*/
 
 
     @PatchMapping("/matches/{id}")
