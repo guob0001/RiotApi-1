@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../champions/champions.css">
     <link rel="stylesheet" href="../global.css">
+    <script src="../lib/HTMLEscape.js"></script>
     <script src="../global.js"></script>
     <title>Champions</title>
 </head>
@@ -17,6 +18,31 @@
     <a href="../templates/champions.html">Champions</a>
 </nav>
 
+<button id="expand-champion-form">Champion ➕</button>
+<div id="create-champion-form"></div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Ban rate</th>
+        <th>Name</th>
+        <th>Pick rate</th>
+        <th>Price</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody id="champions-tbody">
+    <tr>
+        <td>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
 <script src="../champions/champions.js"></script>
+<script src="../champions/editChampions.js"></script>
+<script src="../champions/createChampions.js"></script>
 </body>
 </html>

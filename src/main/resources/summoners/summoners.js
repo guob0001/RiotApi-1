@@ -1,7 +1,7 @@
 let searchSummoner = "doublelift";
 function fetchSummonerFromInput(){
     searchSummoner = document.getElementById("summoner-search").value;
-    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=RGAPI-0edcee9d-c94f-4d67-80bc-a92d4d7cb25d")
+    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=RGAPI-6d6c6a95-90d6-4abb-b795-019aa996d345")
         .then(response => response.json())
         .then(summoner => {
             console.log(summoner)

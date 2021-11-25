@@ -37,16 +37,6 @@ public class Matches {
         return matches.save(newMatch);
     }
 
-    /*@PutMapping("/matches/{id}")
-    public String updateMatchById(@PathVariable String id, @RequestBody Match matchToUpdateWith){
-        if (matches.existsById(id)) {
-            matchToUpdateWith.setMatches_id(id);
-            matches.save(matchToUpdateWith);
-            return "Match was created";
-        } else {
-            return "Match not found";
-        }
-    }*/
 
     @PatchMapping("/matches/{id}")
     public MatchEditDTO patchMatchesById(@PathVariable Long id, @RequestBody Match matchToUpdateWith) {
