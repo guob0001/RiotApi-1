@@ -1,5 +1,5 @@
 const championFormParentDiv = document.getElementById("create-champion-form");
-const championFormExpandButton = document.getElementById("expand-champion-form");
+const championFormExpandButton = document.getElementById("expand-champion-form  ");
 
 const createChampionForm = `<div>
     <label>Ban rate</label>

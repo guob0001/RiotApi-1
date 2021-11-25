@@ -33,18 +33,18 @@ function removeMatchesForm() {
     matchesFormDiv.innerHTML = "";
 }
 
-function createMatch(){
+function createMatch(matchId){
     const matchToCreate = {
         behavior: document.getElementById("create-match-behavior").value,
         gameType: document.getElementById("create-match-gameType").value,
         duration: document.getElementById("create-match-duration").value,
         startDate: document.getElementById("create-match-startDate").value,
         endDate: document.getElementById("create-match-endDate").value,
-        summoners: document.getElementById("create-match-summonersId").value,
-        champions: document.getElementById("create-match-championsId").value
+        summoners: {puuid: document.getElementById("create-match-summonersId").value},
+        champions: {id: document.getElementById("create-match-championsId").value}
     };
     console.log(matchToCreate)
-    fetch(baseURL + "/matches", {
+    fetch(baseURL + "/matches/" + matchId, {
         method: "POST",
         headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(matchToCreate)
