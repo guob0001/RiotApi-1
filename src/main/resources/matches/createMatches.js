@@ -40,7 +40,7 @@ function createMatch(){
         duration: document.getElementById("create-match-duration").value,
         startDate: document.getElementById("create-match-startDate").value,
         endDate: document.getElementById("create-match-endDate").value,
-        summoners:document.getElementById("create-match-summonersId").value,
+        summoners: document.getElementById("create-match-summonersId").value,
         champions: document.getElementById("create-match-championsId").value
     };
     console.log(matchToCreate)
