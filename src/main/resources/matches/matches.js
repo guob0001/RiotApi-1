@@ -16,6 +16,7 @@ function createMatchesCard(matches){
 }
 
 function constructMatchesTableRow(matchesTableRow, matches){
+    console.log(matches)
     matchesTableRow.innerHTML = `
             <td>
                 <p class="row-matches-matches-id">${(matches.id)}</p>
@@ -36,7 +37,7 @@ function constructMatchesTableRow(matchesTableRow, matches){
                 <p class="row-start-date">${(matches.behavior)}</p>
             </td>
             <td>
-                <p class="row-summoner-id">${(matches.summoners.id)}</p>
+                <p class="row-summoner-id">${(matches.summoners.puuid)}</p>
             </td>
             <td>
                 <p class="row-champion-id">${(matches.champions.id)}</p>

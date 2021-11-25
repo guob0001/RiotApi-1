@@ -21,7 +21,7 @@ function updateMatch(match){
             <input id="update-match-summoner-${match.id}" type="text" value="${match.summoners.puuid}">
        </td>
         <td>
-            <input id="update-match-champion-${match.id}" type="text" value="${match.champions.name}">
+            <input id="update-match-champion-${match.id}" type="text" value="${match.champions.id}">
        </td> 
        <td>
             <button id="cancel-update-${match.id}">✖</button>
@@ -46,16 +46,16 @@ function updateMatchInBackend(matchId) {
 
     const tableRowToUpdate = document.getElementById(matchId);
 
-    const matchToUpdate = {
+    matchToUpdate = {
         id: matchId,
         behavior: document.getElementById(`update-match-behavior-${matchId}`).value,
         duration: document.getElementById(`update-match-duration-${matchId}`).value,
         endDate: document.getElementById(`update-match-end-date-${matchId}`).value,
         gameType: document.getElementById(`update-match-game-type-${matchId}`).value,
         startDate: document.getElementById(`update-match-start-date-${matchId}`).value,
-        summoners: document.getElementById(`update-match-summoner-${matchId}`).value,
-        champions: document.getElementById(`update-match-champion-${matchId}`).value
-    };
+        summoners: {puuid: document.getElementById(`update-match-summoner-${matchId}`).value},
+        champions: {id: document.getElementById(`update-match-champion-${matchId}`).value}
+    }
 
     fetch(baseURL + "/matches/" + matchId, {
         method: "PATCH",

@@ -8,11 +8,14 @@ public class MatchEditDTO {
     public Match match;
     public boolean failed;
     public String errorMessage;
-    public Summoner summoner;
-    public Champion champion;
+    public String puuid;
+    public Long id;
 
-    public MatchEditDTO(Match match){
+    public MatchEditDTO(Match match, String puuid, Long id){
         this.match = match;
+        this.id = id;
+        this.puuid = puuid;
+
     }
 
     public MatchEditDTO(String errorMessage){
@@ -20,11 +23,4 @@ public class MatchEditDTO {
         this.failed = true;
     }
 
-    public MatchEditDTO(Summoner summoner) {
-        this.summoner = summoner;
-    }
-
-    public MatchEditDTO(Champion champion) {
-        this.champion = champion;
-    }
 }

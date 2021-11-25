@@ -3,6 +3,7 @@ package com.example.riotapi.controllers;
 import com.example.riotapi.DTO.MatchEditDTO;
 import com.example.riotapi.DTO.MatchesDTO;
 import com.example.riotapi.models.Match;
+import com.example.riotapi.models.Summoner;
 import com.example.riotapi.repositories.ChampionRepository;
 import com.example.riotapi.repositories.MatchRepository;
 import com.example.riotapi.repositories.SummonerRepository;
@@ -16,10 +17,10 @@ public class Matches {
     MatchRepository matches;
 
     @Autowired
-    SummonerRepository summoner;
+    SummonerRepository summoners;
 
     @Autowired
-    ChampionRepository champion;
+    ChampionRepository champions;
 
     @GetMapping("/matches")
     public Iterable<Match> getMatches(){
@@ -46,13 +47,13 @@ public class Matches {
             if (matchToUpdateWith.getDuration() != 0) foundMatch.setDuration(matchToUpdateWith.getDuration());
             if (matchToUpdateWith.getStartDate() != null) foundMatch.setStartDate(matchToUpdateWith.getStartDate());
             if (matchToUpdateWith.getEndDate() != null) foundMatch.setEndDate(matchToUpdateWith.getEndDate());
-            if (matchToUpdateWith.getSummoners() != null && matchToUpdateWith.getSummoners().getId() != null) foundMatch.setSummoners(matchToUpdateWith.getSummoners());
+            if (matchToUpdateWith.getSummoners() != null && matchToUpdateWith.getSummoners().getPuuid() != null) foundMatch.setSummoners(matchToUpdateWith.getSummoners());
             if (matchToUpdateWith.getChampions() != null && matchToUpdateWith.getChampions().getId() != null) foundMatch.setChampions(matchToUpdateWith.getChampions());
 
 
 
             Match createdMatch = matches.save(foundMatch);
-            return new MatchEditDTO(createdMatch);
+            return new MatchEditDTO(createdMatch, matchToUpdateWith.getSummoners().getPuuid(), matchToUpdateWith.getChampions().getId());
         }).orElse(new MatchEditDTO("Cant save data"));
     }
 
