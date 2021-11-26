@@ -33,26 +33,33 @@ function removeMatchesForm() {
     matchesFormDiv.innerHTML = "";
 }
 
-function createMatch(matchId){
-    const matchToCreate = {
-        behavior: document.getElementById("create-match-behavior").value,
-        gameType: document.getElementById("create-match-gameType").value,
-        duration: document.getElementById("create-match-duration").value,
-        startDate: document.getElementById("create-match-startDate").value,
-        endDate: document.getElementById("create-match-endDate").value,
-        summoners: {puuid: document.getElementById("create-match-summonersId").value},
-        champions: {id: document.getElementById("create-match-championsId").value}
+function createMatch() {
+    const behavior = document.getElementById("create-match-behavior").value;
+    const gameType = document.getElementById("create-match-gameType").value;
+    const duration = document.getElementById("create-match-duration").value;
+    const startDate = document.getElementById("create-match-startDate").value;
+    const endDate = document.getElementById("create-match-endDate").value;
+    const puuid = document.getElementById("create-match-summonersId").value;
+    const id = document.getElementById("create-match-championsId").value;
+
+        const newMatch = {
+            behavior: behavior,
+            gameType: gameType,
+            duration: duration,
+            startDate: startDate,
+            endDate: endDate,
+
     };
-    console.log(matchToCreate)
-    fetch(baseURL + "/matches/" + matchId, {
+    fetch(baseURL + "/matches/" + puuid + "/" + id, {
         method: "POST",
         headers: {"Content-type": "application/json; charset=UTF-8"},
-        body: JSON.stringify(matchToCreate)
+        body: JSON.stringify(newMatch)
     }).then(response => response.json())
         .then(match => {
             removeMatchesForm();
             createMatchesCard(match);
         });
 }
+
 document.getElementById("expand-match-form")
     .addEventListener("click", showMatchesForm);

@@ -30,7 +30,7 @@ public class Matches {
         return matches.findById(id).get();
     }
 
-   /* @PostMapping("/matches/{id}")
+    /*@PostMapping("/matches/{id}")
     public MatchEditDTO addMatch(@PathVariable Long id, @RequestBody Match newMatch){
         return matches.findById(id).map(match -> {
             newMatch.setId(null);
@@ -41,6 +41,14 @@ public class Matches {
         }
         ).orElse(new MatchEditDTO("Did not find match by id"));
     }*/
+    @PostMapping("/matches/{puuId}/{champion_id}")
+    public Match addMatch(@RequestBody Match newMatch, @PathVariable String puuId, @PathVariable Long champion_id){
+        newMatch.setId(null);
+        newMatch.setSummoners(summoners.findById(puuId).get());
+        newMatch.setChampions(champions.findById(champion_id).get());
+
+        return matches.save(newMatch);
+    }
 
 
     @PatchMapping("/matches/{id}")

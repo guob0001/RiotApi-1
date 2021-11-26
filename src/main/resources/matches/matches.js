@@ -22,7 +22,7 @@ function constructMatchesTableRow(matchesTableRow, matches){
                 <p class="row-matches-matches-id">${(matches.id)}</p>
             </td>
             <td>
-                <p class="row-matches-duration">${(matches.duration.toString())}</p>
+                <p class="row-matches-duration">${(matches.duration)}</p>
             </td>
             <td>
                 <p class="row-end-date">${(matches.endDate)}</p>
