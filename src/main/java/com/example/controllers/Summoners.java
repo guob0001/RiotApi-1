@@ -1,9 +1,7 @@
-package com.example.riotapi.controllers;
+package com.example.controllers;
 
-import com.example.riotapi.models.Champion;
-import com.example.riotapi.models.Summoner;
-import com.example.riotapi.repositories.MatchRepository;
-import com.example.riotapi.repositories.SummonerRepository;
+import com.example.models.Summoner;
+import com.example.repositories.SummonerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

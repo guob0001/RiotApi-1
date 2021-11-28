@@ -1,6 +1,6 @@
-package com.example.riotapi.repositories;
+package com.example.repositories;
 
-import com.example.riotapi.models.Match;
+import com.example.models.Match;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MatchRepository extends JpaRepository<Match, Long> {

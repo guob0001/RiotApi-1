@@ -1,10 +1,10 @@
-package com.example.riotapi.controllers;
+package com.example.controllers;
 
-import com.example.riotapi.DTO.MatchEditDTO;
-import com.example.riotapi.models.Match;
-import com.example.riotapi.repositories.ChampionRepository;
-import com.example.riotapi.repositories.MatchRepository;
-import com.example.riotapi.repositories.SummonerRepository;
+import com.example.DTO.MatchEditDTO;
+import com.example.models.Match;
+import com.example.repositories.ChampionRepository;
+import com.example.repositories.MatchRepository;
+import com.example.repositories.SummonerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

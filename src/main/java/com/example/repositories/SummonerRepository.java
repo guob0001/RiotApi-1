@@ -1,6 +1,6 @@
-package com.example.riotapi.repositories;
+package com.example.repositories;
 
-import com.example.riotapi.models.Summoner;
+import com.example.models.Summoner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

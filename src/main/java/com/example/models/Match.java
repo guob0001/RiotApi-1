@@ -1,12 +1,9 @@
-package com.example.riotapi.models;
+package com.example.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import org.hibernate.annotations.Fetch;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Table(name="matches")

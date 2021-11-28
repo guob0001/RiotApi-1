@@ -48,6 +48,8 @@ function createMatch() {
             duration: duration,
             startDate: startDate,
             endDate: endDate,
+            puuid: puuid,
+            id: id
 
     };
     fetch(baseURL + "/matches/" + puuid + "/" + id, {

@@ -1,10 +1,10 @@
 let searchSummoner = "doublelift";
 function fetchSummonerFromInput(){
     searchSummoner = document.getElementById("summoner-search").value;
-    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=RGAPI-6d6c6a95-90d6-4abb-b795-019aa996d345")
+    fetch("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchSummoner + "?api_key=")
         .then(response => response.json())
         .then(summoner => {
-            console.log(summoner)
+            //console.log(summoner)
             const name = document.getElementById("summoner-name").innerText = summoner.name;
             const summonerLevel = document.getElementById("summoner-summonerLevel").innerText = summoner.summonerLevel;
             const id = document.getElementById("summoner-id").innerText = summoner.id;
@@ -27,7 +27,7 @@ function fetchSummonerFromInput(){
 }
 
 function saveSummonerToDb(saveSummoner){
-    console.log(saveSummoner)
+    //console.log(saveSummoner)
     fetch(baseURL + "/summoners", {
         method: "POST",
         headers: {"Content-type": "application/json; charset=UTF-8"},

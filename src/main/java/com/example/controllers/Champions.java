@@ -1,7 +1,7 @@
-package com.example.riotapi.controllers;
+package com.example.controllers;
 
-import com.example.riotapi.models.Champion;
-import com.example.riotapi.repositories.ChampionRepository;
+import com.example.models.Champion;
+import com.example.repositories.ChampionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

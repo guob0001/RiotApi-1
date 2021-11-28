@@ -1,11 +1,10 @@
-package com.example.riotapi.models;
+package com.example.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Data

@@ -1,8 +1,8 @@
-package com.example.riotapi.DTO;
+package com.example.DTO;
 
-import com.example.riotapi.models.Champion;
-import com.example.riotapi.models.Match;
-import com.example.riotapi.models.Summoner;
+import com.example.models.Champion;
+import com.example.models.Summoner;
+import com.example.models.Match;
 
 public class MatchCreateDTO {
     public Match match;

@@ -1,6 +1,6 @@
-package com.example.riotapi.repositories;
+package com.example.repositories;
 
-import com.example.riotapi.models.Champion;
+import com.example.models.Champion;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ChampionRepository extends JpaRepository<Champion, Long> {
